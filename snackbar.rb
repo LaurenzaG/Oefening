@@ -43,3 +43,18 @@ def total_amount (menu_nr, patat_cnt)
 
   return amount
 end
+
+initialize_snackbar
+puts "Welcome to the snackbar!"
+name = customer_name
+puts "Hello #{name.capitalize}, which patat would you like to order? "
+show_menu
+menu_nr, patat_cnt = take_order
+
+total = total_amount menu_nr, patat_cnt
+if total = > 0
+  puts "Thank you for your order, your total will be: #{total} euro. "
+  puts "Your order will be delivered as soon as possible. "
+else
+  puts "Something went wrong, please try again. "
+end
