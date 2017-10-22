@@ -11,10 +11,10 @@ def customer_name
 end
 
 def show_menu
-  puts "1 - speciaal - #{@patat_speciaal} 2.0"
-  puts "2 - mayonaise - #{@patat_mayonaise} 1.0"
-  puts "3 - pindasaus - #{@patat_pindasaus} 1.5"
-  puts "4 - currysaus - #{@patat_currysaus} 2.5"
+  puts "1 - speciaal - #{@patat_speciaal} euro"
+  puts "2 - mayonaise - #{@patat_mayonaise} euro"
+  puts "3 - pindasaus - #{@patat_pindasaus} euro"
+  puts "4 - currysaus - #{@patat_currysaus} euro"
 end
 
 def take_order
@@ -25,14 +25,14 @@ def take_order
   return number, count
 end
 
-def total_amount (menu_nr, patat_cnt)
+def total_amount (menu_number, patat_count)
   price = 0
-  price = @patat_speciaal if menu_nr == 1
-  price = @patat_mayonaise if menu_nr == 2
-  price = @patat_pindasaus if menu_nr == 3
-  price = @patat_currysaus if menu_nr == 4
+  price = @patat_speciaal if menu_number == '1'
+  price = @patat_mayonaise if menu_number == '2'
+  price = @patat_pindasaus if menu_number == '3'
+  price = @patat_currysaus if menu_number == '4'
 
-  amount = price * patat_cnt
+  amount = price * patat_count
 
   if amount > 20
     amount *= 0.9
@@ -49,10 +49,10 @@ puts "Welcome to the snackbar!"
 name = customer_name
 puts "Hello #{name.capitalize}, which patat would you like to order? "
 show_menu
-menu_nr, patat_cnt = take_order
+menu_number, patat_count = take_order
 
-total = total_amount menu_nr, patat_cnt
-if total > 0
+total = total_amount menu_number, patat_count
+if total > 0 then
   puts "Thank you for your order, your total will be: #{total} euro. "
   puts "Your order will be delivered as soon as possible. "
 else
