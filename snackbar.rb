@@ -5,6 +5,7 @@ def initialize_snackbar
   @patat_currysaus = 2.5
 end
 
+
 def customer_name
   print "what's your name? "
   return gets.chomp
