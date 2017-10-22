@@ -24,4 +24,22 @@ def take_order
   count = gets.chomp.to_i
   return number, count
 end
- 
+
+def total_amount (menu_nr, patat_cnt)
+  price = 0
+  price = @patat_speciaal if menu_nr == 1
+  price = @patat_mayonaise if menu_nr == 2
+  price = @patat_pindasaus if menu_nr == 3
+  price = @patat_currysaus if menu_nr == 4
+
+  amount = price * patat_cnt
+
+  if amount > 20
+    amount *= 0.9
+  end
+  if amount < 10 && amount > 0
+    amount += 2.5
+  end
+
+  return amount
+end
