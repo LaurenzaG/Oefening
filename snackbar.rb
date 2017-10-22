@@ -16,3 +16,12 @@ def show_menu
   puts "3 - pindasaus - #{@patat_pindasaus} 1.5"
   puts "4 - currysaus - #{@patat_currysaus} 2.5"
 end
+
+def take_order
+  print "Please enter the number of the order of your choice. "
+  number = gets.chomp
+  print "How many servings of patat would you like to order? "
+  count = gets.chomp.to_i
+  return number, count
+end
+ 
