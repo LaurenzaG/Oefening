@@ -52,7 +52,7 @@ show_menu
 menu_nr, patat_cnt = take_order
 
 total = total_amount menu_nr, patat_cnt
-if total = > 0
+if total > 0
   puts "Thank you for your order, your total will be: #{total} euro. "
   puts "Your order will be delivered as soon as possible. "
 else
